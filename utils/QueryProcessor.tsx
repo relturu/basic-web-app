@@ -19,5 +19,14 @@ export default function QueryProcessor(query: string): string {
     const total = numbers.reduce((sum, num) => sum + num, 0);
     return total.toString();
   }
+
+  if (query.toLowerCase().includes("largest")) {
+    const numbers = query.match(/\d+/g)?.map(Number) || [];
+    // add them up
+    let myMax = 0;
+    myMax = Math.max(...numbers);
+    return myMax.toString();
+  }
+
   return "";
 }
