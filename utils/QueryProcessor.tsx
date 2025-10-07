@@ -9,8 +9,19 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("andrewid")) {
     return "aturullo";
   }
-  if (query.toLowerCase().includes("name")) {
+  if (query.toLowerCase().includes("what is your name?")) {
     return "aturullols";
+  }
+
+  if (query.toLowerCase().includes("plus")) {
+    const str = "id=123&count=45";
+  // gets list of numbers 
+    const numbers = str.match(/\d+/g)?.map(Number) || [];
+    let total = 0
+    for (let i = 0; i < numbers.length; i++) {
+      total+= numbers[i]
+    }
+    return total.toString();
   }
 
   return "";
